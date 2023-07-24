@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Not Found</title>
+    <script>
+      // Preserve the requested path and query parameters
+      var path = window.location.pathname + window.location.search;
+      // Modify the history state to trigger Vue Router navigation
+      window.history.replaceState({}, '404', path);
+    </script>
+  </head>
+  <body>
+<!--     <p>This page doesn't exist. You will be redirected to the home page shortly.</p> -->
+    <script>
+      // Redirect to the home page (index.html)
+      var url = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/');
+      window.location.replace(url);
+    </script>
+  </body>
+</html>
